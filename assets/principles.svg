@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250" role="img" aria-labelledby="t d">
+  <title id="t">Design principles I follow</title>
+  <desc id="d">Clarity first, consistency, accessibility for everyone, and clear feedback.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6fc3b2"/>
+      <stop offset="1" stop-color="#b5a3e0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .title { font-size: 22px; font-weight: 700; fill: #6fc3b2; }
+    .sub { font-size: 14px; fill: #a3acbd; }
+    .h { font-size: 16px; font-weight: 700; fill: #e6e9ef; }
+    .p { font-size: 13px; fill: #a3acbd; }
+    .card { opacity: 0; animation: up .7s cubic-bezier(.22,1,.36,1) forwards; }
+    @keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .edge { animation: edge 8s linear infinite; }
+    @keyframes edge { 0%, 100% { stroke: #323a4b; } 10%, 20% { stroke: #6fc3b2; } 30% { stroke: #323a4b; } }
+    .float { animation: float 3s ease-in-out infinite; }
+    @keyframes float { 50% { transform: translateY(-4px); } }
+    .spin { transform-box: fill-box; transform-origin: center; animation: spin 6s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .tick { stroke-dasharray: 30; stroke-dashoffset: 30; animation: tick 3s ease infinite; }
+    @keyframes tick { 0% { stroke-dashoffset: 30; } 30%, 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 30; } }
+  </style>
+
+  <rect x="0.5" y="0.5" width="799" height="249" rx="14" fill="#1e2330" stroke="#323a4b"/>
+  <text x="32" y="46" class="title">Design principles I follow</text>
+  <text x="32" y="70" class="sub">Small rules that keep my designs simple and kind to users</text>
+
+  <!-- card 1: clarity -->
+  <g class="card" style="animation-delay:.1s">
+    <rect x="32" y="92" width="172" height="134" rx="12" fill="#262c3a" stroke="#323a4b" stroke-width="1.5" class="edge" style="animation-delay:0s"/>
+    <g class="float">
+      <circle cx="62" cy="122" r="14" fill="none" stroke="url(#g)" stroke-width="3"/>
+      <line x1="72" y1="132" x2="80" y2="140" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <text x="48" y="172" class="h">Clarity first</text>
+    <text x="48" y="194" class="p">If it needs explaining,</text>
+    <text x="48" y="211" class="p">make it simpler.</text>
+  </g>
+
+  <!-- card 2: consistency -->
+  <g class="card" style="animation-delay:.3s">
+    <rect x="220" y="92" width="172" height="134" rx="12" fill="#262c3a" stroke="#323a4b" stroke-width="1.5" class="edge" style="animation-delay:2s"/>
+    <g class="spin">
+      <rect x="236" y="110" width="12" height="12" rx="3" fill="#6fc3b2"/>
+      <rect x="252" y="110" width="12" height="12" rx="3" fill="#8aa4e6"/>
+      <rect x="236" y="126" width="12" height="12" rx="3" fill="#8aa4e6"/>
+      <rect x="252" y="126" width="12" height="12" rx="3" fill="#b5a3e0"/>
+    </g>
+    <text x="236" y="172" class="h">Consistency</text>
+    <text x="236" y="194" class="p">Same action, same look,</text>
+    <text x="236" y="211" class="p">every single time.</text>
+  </g>
+
+  <!-- card 3: accessibility -->
+  <g class="card" style="animation-delay:.5s">
+    <rect x="408" y="92" width="172" height="134" rx="12" fill="#262c3a" stroke="#323a4b" stroke-width="1.5" class="edge" style="animation-delay:4s"/>
+    <g class="float" style="animation-delay:.5s">
+      <circle cx="438" cy="111" r="5" fill="url(#g)"/>
+      <path d="M424 121 H452 M438 121 V134 M438 134 L430 146 M438 134 L446 146" stroke="url(#g)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+    <text x="424" y="172" class="h">Accessible</text>
+    <text x="424" y="194" class="p">Readable, high contrast,</text>
+    <text x="424" y="211" class="p">usable by everyone.</text>
+  </g>
+
+  <!-- card 4: feedback -->
+  <g class="card" style="animation-delay:.7s">
+    <rect x="596" y="92" width="172" height="134" rx="12" fill="#262c3a" stroke="#323a4b" stroke-width="1.5" class="edge" style="animation-delay:6s"/>
+    <circle cx="626" cy="124" r="15" fill="#b5a3e0" fill-opacity=".18" stroke="url(#g)" stroke-width="2.5"/>
+    <path d="M619 124 L624 130 L634 118" stroke="#e6e9ef" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" class="tick"/>
+    <text x="612" y="172" class="h">Clear feedback</text>
+    <text x="612" y="194" class="p">Users always know</text>
+    <text x="612" y="211" class="p">what just happened.</text>
+  </g>
+</svg>

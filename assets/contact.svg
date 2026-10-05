@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220" role="img" aria-labelledby="t d">
+  <title id="t">Let's build something together</title>
+  <desc id="d">Open to freelance work, internships, and design feedback.</desc>
+  <defs>
+    <linearGradient id="border" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="800" y2="0">
+      <stop offset="0" stop-color="#6fc3b2"/>
+      <stop offset="0.5" stop-color="#b5a3e0"/>
+      <stop offset="1" stop-color="#6fc3b2"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-800 0" to="800 0" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0" x2="1">
+      <stop offset="0" stop-color="#6fc3b2"/>
+      <stop offset="1" stop-color="#8aa4e6"/>
+    </linearGradient>
+    <radialGradient id="blobA"><stop offset="0" stop-color="#6fc3b2" stop-opacity=".45"/><stop offset="1" stop-color="#6fc3b2" stop-opacity="0"/></radialGradient>
+    <radialGradient id="blobB"><stop offset="0" stop-color="#b5a3e0" stop-opacity=".45"/><stop offset="1" stop-color="#b5a3e0" stop-opacity="0"/></radialGradient>
+    <clipPath id="clip"><rect x="3" y="3" width="794" height="214" rx="14"/></clipPath>
+  </defs>
+  <style>
+    text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }
+    .h { font-size: 28px; font-weight: 800; fill: #e6e9ef; text-anchor: middle; }
+    .p { font-size: 15px; fill: #a3acbd; text-anchor: middle; }
+    .b { font-size: 15px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+    .wave { transform-box: fill-box; transform-origin: 70% 80%; animation: wave 2.4s ease-in-out infinite; }
+    @keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20%, 40% { transform: rotate(-8deg); } }
+    .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 50% { transform: scale(1.05); } }
+  </style>
+
+  <rect x="1.5" y="1.5" width="797" height="217" rx="16" fill="#1e2330" stroke="url(#border)" stroke-width="3"/>
+
+  <g clip-path="url(#clip)">
+    <circle r="120" fill="url(#blobA)">
+      <animateMotion dur="14s" repeatCount="indefinite" path="M90,40 C200,180 40,220 90,40"/>
+    </circle>
+    <circle r="130" fill="url(#blobB)">
+      <animateMotion dur="16s" repeatCount="indefinite" path="M720,190 C600,40 780,0 720,190"/>
+    </circle>
+  </g>
+
+  <text x="400" y="66" class="h">Let's build something together 👋</text>
+  <text x="400" y="98" class="p">Open to freelance work, internships, and friendly design feedback.</text>
+
+  <g class="pulse">
+    <rect x="218" y="128" width="172" height="46" rx="23" fill="url(#btn)"/>
+    <text x="304" y="151" class="b" fill="#1e2330">View portfolio →</text>
+  </g>
+  <rect x="410" y="128" width="172" height="46" rx="23" fill="none" stroke="#b5a3e0" stroke-width="2"/>
+  <text x="496" y="151" class="b" fill="#cfc3ec">Say hello ✉</text>
+</svg>
