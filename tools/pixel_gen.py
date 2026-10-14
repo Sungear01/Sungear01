@@ -16,6 +16,7 @@ import random
 random.seed(7)
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
 os.makedirs(os.path.join(ROOT, "px"), exist_ok=True)
+os.makedirs(os.path.join(ROOT, "res"), exist_ok=True)
 
 # ---------------------------------------------------------------- palette ---
 C = {
@@ -158,6 +159,7 @@ BASE_CSS = (
 
 
 def svg(name, w, h, body, css="", title=""):
+    title = title.replace("&", "&amp;").replace('"', "&quot;")
     doc = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
            f'shape-rendering="crispEdges" role="img" aria-label="{title}"><title>{title}</title>'
            f"<style>{BASE_CSS}{css}"
@@ -597,5 +599,103 @@ def small_icons():
         svg(f"px/{name}.svg", w + pad * 2, h + pad * 2 + 6, body, "", name)
 
 
+# ============================================================ SIDE QUESTS ===
+# (quest, done?, progress 0-100)  -> edit freely; done=True draws a checked box
+QUESTS = [
+    ("FIGMA PROTOTYPING & WIREFRAMING", True, 100),
+    ("BUILDING A REUSABLE DESIGN SYSTEM", False, 30),
+    ("USER RESEARCH THAT ACTUALLY CHANGES THE DESIGN", False, 20),
+    ("ACCESSIBILITY - WCAG 2.1 AA ON EVERY PROJECT", False, 50),
+    ("DOCKER & CLEAN BACKEND ARCHITECTURE", False, 40),
+]
+CHECK = ["......w", ".....ww", "w...ww.", "ww.ww..", ".www...", "..w...."]
+
+
+def sidequests():
+    W, rh, top = 1000, 48, 78
+    H = top + len(QUESTS) * rh + 70
+    b, css = [], []
+    css.append("@keyframes pop{from{opacity:0}to{opacity:1}}"
+               "@keyframes pulse{0%,49%{opacity:1}50%,100%{opacity:.35}}")
+    b.append(pbox(4, 4, W - 8, H - 8, C["ink"], C["white"], inner=C["lav"]))
+    b.append(text("SIDE QUESTS", 30, 28, 3, C["gold"], shadow=C["out"]))
+    sub = "CURRENTLY LEVELING UP"
+    b.append(text(sub, W - 30 - tw(sub, 2), 32, 2, C["gray"]))
+    active = next((i for i, q in enumerate(QUESTS) if not q[1]), None)
+    for i, (label, done, prog) in enumerate(QUESTS):
+        y = top + i * rh
+        if i % 2 == 0:
+            b.append(f'<rect x="24" y="{y-8}" width="{W-48}" height="{rh-4}" fill="{C["n2"]}"/>')
+        # pixel checkbox
+        bx = 56
+        if done:
+            b.append(pbox(bx, y - 2, 32, 32, C["mint"], C["gold"]))
+            b.append(f'<g style="animation:pop .1s steps(1) .6s both">'
+                     f'{sprite(CHECK, {"w": C["white"]}, bx + 5, y + 5, 3)}</g>')
+        else:
+            cls = ' style="animation:pulse 1s linear infinite"' if i == active else ""
+            b.append(f'<g{cls}>{pbox(bx, y - 2, 32, 32, C["n1"], C["lav"])}</g>')
+        if i == active:  # blinking selector on the quest in progress
+            b.append(f'<g class="blink">{sprite(["k.", "kk", "kkk", "kk", "k."], {"k": C["gold"]}, 34, y + 6, 3)}</g>')
+        b.append(text(label, 108, y + 8, 2, C["mintL"] if done else C["white"]))
+        # progress cells
+        cells, cw, px = 10, 14, 750
+        filled = round(prog / 100 * cells)
+        col = C["mint"] if done else (C["pink"] if i == active else C["lav"])
+        for k in range(cells):
+            if k < filled:
+                dl = 0.4 + i * 0.12 + k * 0.04
+                b.append(f'<rect style="animation:pop .1s steps(1) {dl:.2f}s both" x="{px+k*cw}" '
+                         f'y="{y+4}" width="{cw-4}" height="16" fill="{col}"/>')
+            else:
+                b.append(f'<rect x="{px+k*cw}" y="{y+4}" width="{cw-4}" height="16" fill="{C["n3"]}"/>')
+        tag = "CLEAR!" if done else f"{prog}%"
+        b.append(f'<g{" class=\"blink\"" if done else ""}>'
+                 f'{text(tag, 896, y + 8, 2, C["gold"] if done else C["gray"])}</g>')
+    # overall EXP bar
+    fy = top + len(QUESTS) * rh + 10
+    n_done = sum(1 for q in QUESTS if q[1])
+    total = round(sum(q[2] for q in QUESTS) / len(QUESTS))
+    b.append(text(f"CLEARED {n_done}/{len(QUESTS)}", 30, fy + 6, 2, C["gold"]))
+    b.append(text("EXP", 230, fy + 6, 2, C["blue"]))
+    seg = 40
+    for k in range(seg):
+        on = k < round(total / 100 * seg)
+        st = f' style="animation:pop .1s steps(1) {1.2+k*0.02:.2f}s both"' if on else ""
+        b.append(f'<rect{st} x="{276+k*16}" y="{fy+2}" width="12" height="20" '
+                 f'fill="{C["blue"] if on else C["n3"]}"/>')
+    b.append(text(f"{total}%", 924, fy + 6, 2, C["gray"]))
+    alt = "Side quests: " + "; ".join(f"{l.title()} ({'done' if d else f'{p}%'})" for l, d, p in QUESTS)
+    svg("sidequests.svg", W, H, "".join(b), "".join(css), alt)
+
+
+# (file slug, title, description, icon grid, icon palette, accent)
+RESOURCES = [
+    ("google-ux", "GOOGLE UX DESIGN CERTIFICATE", "THE FULL UX PROCESS, STEP BY STEP",
+     *ICONS["scroll"], C["gold"]),
+    ("laws-of-ux", "LAWS OF UX", "PSYCHOLOGY BEHIND GOOD INTERFACES", *ICONS["crystal"], C["mint"]),
+    ("figma-learn", "FIGMA LEARN", "AUTO LAYOUT, COMPONENTS, PROTOTYPING", *ITEM_ART["palette"], C["pink"]),
+    ("webaim", "WEBAIM", "ACCESSIBILITY BASICS AND CONTRAST CHECKS", *ICONS["heart"], C["lav"]),
+    ("refactoring-ui", "REFACTORING UI", "PRACTICAL VISUAL DESIGN TIPS FOR DEVELOPERS",
+     *ICONS["star"], C["blue"]),
+]
+
+
+def resources():
+    W, H = 1000, 56
+    for i, (slug, title, desc, grid, pal, acc) in enumerate(RESOURCES):
+        b = [pbox(4, 4, W - 8, H - 8, C["n2"], acc)]
+        sc = 3
+        gw, gh = size(grid, sc)
+        b.append(f'<g transform="translate({40-gw//2},{H//2-gh//2})"><g class="hop" '
+                 f'style="animation-delay:{-i*0.3:.1f}s;animation-duration:1.4s">{sprite(grid, pal, 0, 0, sc)}</g></g>')
+        b.append(text(title, 76, 21, 2, acc))
+        b.append(text("- " + desc, 76 + tw(title, 2) + 16, 21, 2, C["gray"]))
+        b.append(f'<g class="blink">{sprite(["k.", "kk", "kkk", "kk", "k."], {"k": C["white"]}, 922, 19, 3)}</g>')
+        b.append(text("GO", 938, 21, 2, C["white"]))
+        svg(f"res/{slug}.svg", W, H, "".join(b), "", f"{title.title()}: {desc.lower()}")
+
+
 if __name__ == "__main__":
     header(); dialog(); status(); inventory(); questmap(); footer(); small_icons()
+    sidequests(); resources()
