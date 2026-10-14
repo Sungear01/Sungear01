@@ -105,10 +105,6 @@ const player1 = {
   <img src="https://streak-stats.demolab.com/?user=Sungear01&hide_border=true&background=1a1530&ring=ff8fb1&fire=ffd166&currStreakNum=f2ecff&currStreakLabel=ff8fb1&sideNums=f2ecff&sideLabels=6fc3b2&dates=a3acbd&stroke=3b2b6e" alt="Login streak (GitHub contribution streak)" />
 </p>
 
-<p align="center">
-  <img width="100%" src="https://ghchart.rshah.org/ff8fb1/Sungear01" alt="Contribution calendar" />
-</p>
-
 <!-- Appears after the "Generate contribution snake" workflow runs once (Actions tab → Run workflow) -->
 <p align="center">
   <picture>
