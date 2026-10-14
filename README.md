@@ -87,10 +87,10 @@ const player1 = {
 ## <img src="./assets/px/sword.svg" width="30" alt="" /> Quest log
 
 <p align="center">
-  <a href="https://github.com/Sungear01/Tiktet-UXUI"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=Tiktet-UXUI&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2" alt="Quest: Tiktet-UXUI" /></a>
-  <a href="https://github.com/Sungear01/WILDTRAIL"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=WILDTRAIL&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2" alt="Quest: WILDTRAIL" /></a>
-  <a href="https://github.com/Sungear01/line_webapp"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=line_webapp&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2" alt="Quest: line_webapp" /></a>
-  <a href="https://github.com/Sungear01/-Status-working-Installation-Tracker"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=-Status-working-Installation-Tracker&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2" alt="Quest: Installation tracker" /></a>
+  <a href="https://github.com/Sungear01/Tiktet-UXUI"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=Tiktet-UXUI&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2&v=20261014" alt="Quest: Tiktet-UXUI" /></a>
+  <a href="https://github.com/Sungear01/WILDTRAIL"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=WILDTRAIL&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2&v=20261014" alt="Quest: WILDTRAIL" /></a>
+  <a href="https://github.com/Sungear01/line_webapp"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=line_webapp&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2&v=20261014" alt="Quest: line_webapp" /></a>
+  <a href="https://github.com/Sungear01/-Status-working-Installation-Tracker"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=Sungear01&repo=-Status-working-Installation-Tracker&hide_border=true&bg_color=1a1530&title_color=ff8fb1&text_color=f2ecff&icon_color=6fc3b2&description_lines_count=2&v=20261014" alt="Quest: Installation tracker" /></a>
 </p>
 
 <!-- ═══════════════════════  SAVE DATA  ═══════════════════════ -->
