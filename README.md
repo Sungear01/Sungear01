@@ -15,7 +15,7 @@
   <a href="https://wittawat-eight.vercel.app/"><img src="https://img.shields.io/badge/%E2%96%B6%20PORTFOLIO-VISIT-6fc3b2?style=for-the-badge&labelColor=1a1530" alt="Visit my portfolio" /></a>
   <a href="mailto:Dnaigook@gmail.com"><img src="https://img.shields.io/badge/%E2%9C%89%20MAIL-SAY%20HELLO-ff8fb1?style=for-the-badge&labelColor=1a1530" alt="Email me" /></a>
   <a href="https://github.com/Sungear01"><img src="https://img.shields.io/github/followers/Sungear01?label=PARTY%20MEMBERS&style=for-the-badge&color=b5a3e0&labelColor=1a1530" alt="GitHub followers" /></a>
-  <img src="https://komarev.com/ghpvc/?username=Sungear01&label=VISITORS&color=ffd166&style=for-the-badge&abbreviated=true" alt="Profile views" />
+  <img src="https://hits.sh/github.com/Sungear01.svg?style=for-the-badge&label=VISITORS&color=ffd166&labelColor=1a1530" alt="Profile views" />
 </p>
 
 <br />
@@ -97,7 +97,7 @@ const player1 = {
 ## <img src="./assets/px/gamepad.svg" width="34" alt="" /> Save data
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Sungear01&show_icons=true&count_private=true&include_all_commits=true&hide_border=true&bg_color=1a1530&title_color=ffd166&icon_color=6fc3b2&text_color=f2ecff&hide_rank=true&custom_title=PLAYER%20STATS" alt="GitHub stats" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Sungear01&show_icons=true&count_private=true&hide_border=true&bg_color=1a1530&title_color=ffd166&icon_color=6fc3b2&text_color=f2ecff&hide_rank=true&custom_title=PLAYER%20STATS" alt="GitHub stats" />
   <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sungear01&layout=compact&langs_count=8&hide_border=true&bg_color=1a1530&title_color=ffd166&text_color=f2ecff&custom_title=SKILL%20TREE" alt="Top languages" />
 </p>
 
@@ -106,7 +106,7 @@ const player1 = {
 </p>
 
 <p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Sungear01&bg_color=1a1530&color=f2ecff&line=ff8fb1&point=6fc3b2&area=true&area_color=b5a3e0&hide_border=true&custom_title=EXP%20GAINED" alt="Contribution activity graph" />
+  <img width="100%" src="https://ghchart.rshah.org/ff8fb1/Sungear01" alt="Contribution calendar" />
 </p>
 
 <!-- Appears after the "Generate contribution snake" workflow runs once (Actions tab → Run workflow) -->
