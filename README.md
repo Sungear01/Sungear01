@@ -65,24 +65,22 @@ const player1 = {
 </p>
 
 <!-- ═══════════════════════  SIDE QUESTS  ═══════════════════════ -->
-## <img src="./assets/px/potion.svg" width="26" alt="" /> Side quests (currently leveling up)
+## <img src="./assets/px/potion.svg" width="26" alt="" /> Side quests
 
-- [x] Figma prototyping & wireframing
-- [ ] Building a reusable design system
-- [ ] User research that actually changes the design
-- [ ] Accessibility — WCAG 2.1 AA on every project
-- [ ] Docker & clean backend architecture
+<p align="center">
+  <img src="./assets/sidequests.svg" width="100%" alt="Side quests: Figma prototyping and wireframing (cleared); building a reusable design system 30%; user research that actually changes the design 20%; accessibility, WCAG 2.1 AA on every project 50%; Docker and clean backend architecture 40%" />
+</p>
 
 <details>
 <summary><b><img src="./assets/px/crystal.svg" width="18" alt="" /> Training grounds (resources)</b></summary>
 <br />
-
-- 🎓 [Google UX Design Certificate](https://grow.google/uxdesign/) — the full UX process, step by step
-- 📐 [Laws of UX](https://lawsofux.com/) — psychology behind good interfaces
-- 🧩 [Figma Learn](https://help.figma.com/hc/en-us/categories/360002051613) — auto layout, components, prototyping
-- ♿ [WebAIM](https://webaim.org/) — accessibility basics and contrast checks
-- 💡 [Refactoring UI](https://www.refactoringui.com/) — practical visual design tips for developers
-
+<p align="center">
+  <a href="https://grow.google/uxdesign/"><img src="./assets/res/google-ux.svg" width="100%" alt="Google UX Design Certificate: the full UX process, step by step" /></a>
+  <a href="https://lawsofux.com/"><img src="./assets/res/laws-of-ux.svg" width="100%" alt="Laws of UX: psychology behind good interfaces" /></a>
+  <a href="https://help.figma.com/hc/en-us/categories/360002051613"><img src="./assets/res/figma-learn.svg" width="100%" alt="Figma Learn: auto layout, components, prototyping" /></a>
+  <a href="https://webaim.org/"><img src="./assets/res/webaim.svg" width="100%" alt="WebAIM: accessibility basics and contrast checks" /></a>
+  <a href="https://www.refactoringui.com/"><img src="./assets/res/refactoring-ui.svg" width="100%" alt="Refactoring UI: practical visual design tips for developers" /></a>
+</p>
 </details>
 
 <!-- ═══════════════════════  QUEST LOG  ═══════════════════════ -->
